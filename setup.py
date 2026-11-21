@@ -39,7 +39,7 @@ def get_extensions():
             "-D__CUDA_NO_HALF2_OPERATORS__",
         ]
 
-    sources = [os.path.join(extensions_dir, s) for s in sources]
+    sources = [os.path.relpath(s, this_dir) for s in sources]
 
     include_dirs = [extensions_dir]
 
